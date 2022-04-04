@@ -1,0 +1,16 @@
+
+process (clk)
+begin
+   if clk='1' and clk'event then
+      if preset='1' then
+         q <= (others => '0');
+      elsif <load_enable>='1' then
+            q <= d;
+         else
+            q <= q + 1;
+         end if;
+      end if;
+   end if;
+end process;
+
+						
